@@ -41,10 +41,10 @@ class ReceiptEntity extends Equatable {
 
   static ReceiptEntity fromSnapshot(DocumentSnapshot snap) {
     return ReceiptEntity(
-      snap.data['task'],
-      snap.documentID,
-      snap.data['note'],
-      snap.data['complete'],
+      snap.data()['task'],
+      snap.id,
+      snap.data()['note'],
+      snap.data()['complete'],
     );
   }
 
