@@ -2,10 +2,12 @@ import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopy/authentication/authentication.dart';
-import 'package:shopy/home/home.dart';
+// import 'package:shopy/home/home.dart';
 import 'package:shopy/login/login.dart';
 import 'package:shopy/splash/splash.dart';
 import 'package:shopy/theme.dart';
+
+import 'main/src/main.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -51,7 +53,7 @@ class _AppViewState extends State<AppView> {
             switch (state.status) {
               case AuthenticationStatus.authenticated:
                 _navigator.pushAndRemoveUntil<void>(
-                  HomePage.route(),
+                  Main.route(),
                   (route) => false,
                 );
                 break;
